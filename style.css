@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+font-size:10px;
+font-family:'Monsterrat',sans-serif ;
+scroll-behavior: smooth;
+}
+
+/* Header section */
+#header {
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: auto;
+}
+#header .header {
+	min-height: 8vh;
+	width: 100%;
+	background-color: rgba(31, 30, 30, 0.24);
+	transition: 0.3s ease background-color;
+	opacity: 0.5;
+	transition: 0.3s ease;
+}
+#header .header:hover{
+	opacity: 1;
+}
+
+#header .nav-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	max-width: 1300px;
+	padding: 0 10px;
+}
+#header .nav-list ul {
+	list-style: none;
+	position: absolute;
+	background-color: rgb(31, 30, 30);
+	width: 100vw;
+	height: 100vh;
+	left: 100%;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	overflow-x: hidden;
+	transition: 0.5s ease left;
+}
+#header .nav-list ul.active {
+	left: 0%;
+}
+#header .nav-list ul a {
+	font-size: 2.5rem;
+	font-weight: 500;
+	letter-spacing: 0.2rem;
+	text-decoration: none;
+	color: white;
+	text-transform: uppercase;
+	padding: 20px;
+	display: block;
+}
+#header .nav-list ul a::after {
+	content: attr(data-after);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	color: #d1977b;
+	font-size: 13rem;
+	letter-spacing: 50px;
+	z-index: -1;
+	transition: 0.3s ease letter-spacing;
+}
+#header .nav-list ul li:hover a::after {
+	transform: translate(-50%, -50%) scale(1);
+	letter-spacing: initial;
+}
+#header .nav-list ul li:hover a {
+	color: #ffc2a3;
+}
+
+
+
+/* Hero Section */
+a{
+	text-decoration: none;
+}
+
+body, html {
+    height: 100%;
+}
+
+
+.container {
+	min-height: 100vh;
+	width: 1366px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#hero {
+	height: 100vh;
+	width: 100%;
+	background-color: black;
+	background-image: url(picture/homepic/RV-01.png);
+	background-size: cover;
+	background-position:center ;
+	background-repeat: no-repeat;
+	transition: 3s;
+
+	animation-name: animate;
+	animation-direction: alternate-reverse;
+	animation-duration: 60s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-play-state: running;
+	animation-timing-function: ease-in-out;
+}
+@keyframes animate{
+	0%{
+		background-image: url(picture/homepic/RV-01.png);
+	}
+	10%{
+		background-image: url(picture/homepic/RV-10.png);
+	}
+	20%{
+		background-image: url(picture/homepic/RV-09.png);
+	}
+	30%{
+		background-image: url(picture/homepic/RV-08.png);
+	}
+	40%{
+		background-image: url(picture/homepic/RV-07.png);
+	}
+	50%{
+		background-image: url(picture/homepic/RV-06.png);
+	}
+	60%{
+		background-image: url(picture/homepic/RV-05.png);
+	}
+	70%{
+		background-image: url(picture/homepic/RV-04.png);
+	}
+	80%{
+		background-image: url(picture/homepic/RV-03.png);
+	}
+	90%{
+		background-image: url(picture/homepic/RV-02.png);
+	}
+	100%{
+		background-image: url(picture/homepic/RV-01.png);
+	}
+}
+#hero::after{
+
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(90, 86, 86);
+    opacity: .8;
+    z-index: -1;
+}
+#hero .hero{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+
+}
+/* box */
+#hero h1{
+display: block;
+width: fit-content;
+font-size: 5rem;
+position: relative;
+color: transparent;
+animation:text_reveal .5s ease forwards;
+animation-delay: 1.5s;
+
+}
+#hero h1:nth-child(1){
+    animation-delay: 1s;
+}
+#hero h1:nth-child(2){
+    animation-delay: 2s;
+}
+#hero h1:nth-child(3){
+    animation:text_reveal_name .5s ease forwards;
+    animation-delay: 3s;
+}
+/* #hero h1 span{
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 0;
+background-color: #ffc2a3;
+animation: text_reveal_box 1s ease;
+animation-delay: .3s;
+
+}
+#hero h1:nth-child(1) span{
+    animation-delay: .5s;
+}
+#hero h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+#hero h1:nth-child(3) span{
+    animation-delay: 2.5s;
+} */
+/* lets start button */
+#hero .cta{
+ display: inline-block;
+ padding: 8px 8px;
+ color:white;
+ background-color: transparent;
+ border:2px solid #ffc2a3;
+ border-radius: 10px;
+ font-size: 2rem;
+ text-transform: uppercase;
+ letter-spacing: 0.2rem;
+ margin-top: 30px;
+ margin-left: -250px;
+ transition: .3s ease;
+ transition-property: background-color,color;
+
+}
+
+#hero .cta:hover{
+color:white;
+background-color: #ffc2a3;
+
+}
+/* End Hero Section */
+/* Introduction Section */
+
+.container1{
+	background-color: #dbdcdc;
+	text-align: center;
+	justify-items: center;
+	align-items: center;
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	
+
+}
+
+.pic1{
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	height: 100%;
+	
+}
+.redpart {
+	width: 100%;
+	min-height: 100vh;
+	background: #c6514b; 
+	text-align: center;
+	padding: 2rem;
+  }
+  .pic2{
+
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+
+  }
+/* End Introduction section */
+
+/* Timeline Section */
+.timeline {
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	background: #29323c;
+      }
+
+/* End Timeline Section */
+
+/* interactive Section */
+#interactive{
+	background-color: #f0dcd2;
+	text-align: center;
+	justify-items: center;
+	text-align: center;
+	position: relative;
+	width: 100%;
+	height: 105vh;
+	margin: 0;
+	display: flex;
+}
+#inter{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	overflow: hidden;
+}
+#flo{
+       min-width: 100%;
+       min-height: 100vh;
+}
+
+
+
+/* End interactive Section */
+
+
+
+
+@keyframes text_reveal_box {
+	50% {
+		width: 100%;
+		left: 0;
+	}
+	100% {
+		width: 0;
+		left: 100%;
+	}
+}
+@keyframes text_reveal{
+100%{
+    color: white;
+}
+
+}
+/* flower revolution words */
+@keyframes text_reveal_name{
+    100%{
+        color:#ffc2a3;
+        font-weight: 470;
+    }
+    
+    }
+
+	
+/* sketch section */
+.sketch {
+    background-color: #cfcdc3;
+    padding: 50rem 0;
+  }
+
+/* End sketch section */
+    /* Media Query For Desktop */
+@media only screen and (min-width: 1200px) {
+	/* header */
+	
+	#header .nav-list ul {
+		position: initial;
+		display: block;
+		height: auto;
+		width: fit-content;
+		background-color: transparent;
+	}
+	#header .nav-list ul li {
+		display: inline-block;
+	}
+	#header .nav-list ul li a {
+		font-size: 1.8rem;
+	}
+	#header .nav-list ul a:after {
+		display: none;
+	}
+	/* End header */
+
+	#services .service-bottom .service-item {
+		flex-basis: 22%;
+		margin: 1.5%;
+	}
+}
+/* End  Media Query For Desktop */
